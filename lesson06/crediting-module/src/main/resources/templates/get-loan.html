@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация по кредиту</title>
+</head>
+
+<body>
+<a id="top" href="index">Главная</a>
+<a href="creating-client">Добавление клиента</a>
+
+
+<form action="#" th:action="@{/get-loan}" method="post" th:object="${creditDto}">
+
+        <p>Условия по кредиту<br></p>
+        <p>Сумма кредита <input type="number" th:field="${creditDto.amount}" placeholder="amount"><br></p>
+        <p>Процентная ставка <input type="text" th:field="${creditDto.percentage}" placeholder="percentage"><br></p>
+        <p>Срок кредитования<input type="text" th:field="${creditDto.creditPeriod}" placeholder="period"><br></p>
+
+    <div class="form-row text-center">
+        <div class="col-12">
+            <button type="submit" class="btn btn-secondary">Зарегистрировать заявку на кредит</button>
+        </div>
+    </div>
+</form>
