@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление клиента</title>
+</head>
+
+<body>
+<a id="top" href="index">Главная</a>
+<a href="creating-client">Добавление клиента</a>
+<!--<a href="registration.html">Регистрация</a>-->
+
+
+<form action="#" th:action="@{/creating-client}" method="post" th:object="${clientDto}">
+
+    <p>ФИО <input type="text" th:field="${clientDto.name}" placeholder="your name"><br></p>
+    <p>Паспорт <input type="text" th:field="${clientDto.passportId}" placeholder="your name"><br></p>
+    <p>Адрес <input type="text" th:field="${clientDto.address}" placeholder="your address"><br></p>
+    <p>Работа <input type="text" th:field="${clientDto.job}" placeholder="your job"><br></p>
+    <p>Зарплата <input type="number" th:field="${clientDto.salary}" placeholder="your salary"><br></p>
+    <p>Резидент <input type="number" th:field="${clientDto.resident}" placeholder="resident/ not resident (1/0)"><br></p>
+<!--    <p>Работа <input type="number" th:field="${clientDto.working}" placeholder="working"><br></p>-->
+<!--    <p>Криминал <input type="number" th:field="${clientDto.notCriminal}" placeholder="criminal"><br></p>-->
+    <p>Кредиты в других банках <input type="number" th:field="${clientDto.checkForDebts}" placeholder="credits (1/0)"><br></p>
+<!--    <p>НДФЛ <input type="number" th:field="${clientDto.checkNdfl}" placeholder="ndfl"><br></p>-->
+<!--    <p>Условия по кредиту<br></p>-->
+<!--    <p>Сумма кредита <input type="number" th:field="${clientDto.amount}" placeholder="amount"><br></p>-->
+<!--    <p>Процентная ставка <input type="number" th:field="${clientDto.percentage}" placeholder="percentage"><br></p>-->
+<!--    <p>Срок кредитования<input type="number" th:field="${clientDto.creditPeriod}" placeholder="period"><br></p>-->
+
+    <div class="form-row text-center">
+        <div class="col-12">
+            <button type="submit" class="btn btn-secondary">Зарегистрировать в системе</button>
+        </div>
+    </div>
+</form>
+
+
+</body>
+
+</html>
