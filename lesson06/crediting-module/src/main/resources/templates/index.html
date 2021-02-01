@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Конвертер</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<a id="top" href="index">Главная</a>
+<a href="creating-client">Добавление клиента</a>
+
+<div class="container">
+
+    <div class="col-md-10 text-left">
+        <div>
+
+            <table class="table table-hover">
+                <thead class="head-dark">
+                <tr>
+                    <td>Код</td>
+                    <td>Наименование валюты</td>
+                    <td>Номинал</td>
+                    <td>Значение</td>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr th:each="currency : ${currencies}">
+                    <td th:utext="${currency.charCode}"/>
+                    <td th:utext="${currency.name}"/>
+                    <td th:utext="${currency.nominal}"/>
+                    <td th:utext="${currency.value}"/>
+                </tr>
+                </tbody>
+            </table>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
