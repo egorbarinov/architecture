@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление клиента</title>
+</head>
+
+<body>
+<!--<a id="top" href="index.html">Главная</a>-->
+<!--<a href="contacts.html">Контакты</a>-->
+<!--<a href="catalog/product.html">Товары каталога</a>-->
+<!--<a href="registration.html">Регистрация</a>-->
+
+<h1>Сервис безопасности: Проверяем нового клиента:</h1>
+<form action="#" th:action="@{/clients-list/clients-check}" method="post" th:object="${newClient}">
+
+    <p>ФИО <input type="text" th:field="${newClient.name}" placeholder="your name"><br></p>
+    <p>Паспорт <input type="text" th:field="${newClient.passportId}" placeholder="your name"><br></p>
+    <p>Адрес <input type="text" th:field="${newClient.address}" placeholder="your address"><br></p>
+    <p>Работа <input type="text" th:field="${newClient.job}" placeholder="your job"><br></p>
+    <p>Зарплата <input type="number" th:field="${newClient.salary}" placeholder="your salary"><br></p>
+    <p>Резидент <input type="number" th:field="${newClient.resident}" placeholder="resident/ not resident (1/0)"><br></p>
+    <p>Кредиты в других банках <input type="number" th:field="${newClient.checkForDebts}" placeholder="credits (1/0)"><br></p>
+    <p>НДФЛ <input type="number" th:field="${newClient.checkNDFL}" placeholder="ndfl 1/0"><br></p>
+    <p>Криминал <input type="number" th:field="${newClient.notCriminal}" placeholder="criminal 1/0"><br></p>
+
+    <div class="form-row text-center">
+        <div class="col-12">
+            <button type="submit" class="btn btn-secondary">Отправить в систему результаты первичной проверки</button>
+        </div>
+    </div>
+</form>
+
+
+</body>
+
+</html>
